@@ -1,7 +1,13 @@
-<h1>Here are all the dolls</h1>
+<div class="container">
+  <h1>Here are all the dolls</h1>
 
-<ul>
-  <% @dolls.each do |doll| %>
+  <ul>
+    <% @dolls.each do |doll| %>
     <li><%= doll.name %></li>
-  <% end %>
-</ul>
+    <li><%= doll.description %></li>
+    <li><%= doll.location %></li>
+    <li><%= doll.price %></li>
+    <li><%= cl_image_tag doll.image.key %></li>
+    <% end %>
+  </ul>
+</div>
