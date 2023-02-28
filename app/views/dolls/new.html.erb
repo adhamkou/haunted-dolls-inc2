@@ -1,0 +1,11 @@
+<div class="conbtain">
+  <h1>Rent out your haunted doll</h1>
+
+  <%= simple_form_for(@doll) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.input :location %>
+    <%= f.submit %>
+  <% end %>
+</div>
