@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :dolls, only: [:index] do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:my_bookings, :set_status]
+  # resources :bookings, only: [:my_bookings, :set_status]
+  get '/my_bookings', to: 'bookings#my_bookings'
+  get 'bookings/:id/set_status', to: 'bookings#set_status'
 end

@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
       # raise
       # display all the booking requests made for my doll
-      # @user = params[:user_id]
+      @user = current_user
       # interator : @user.dolls
       # user.doll.bookings (display all the bookings belong_to this doll,using inside interator)
   end
