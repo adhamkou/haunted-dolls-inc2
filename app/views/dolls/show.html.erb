@@ -1,9 +1,18 @@
-<h1>Is this the doll you want?</h1>
+<div class="container">
+  <h1>Is this the doll you want?</h1>
 
-<ul>
-  <li><%= @doll.name %></li>
-  <li><%= @doll.description %></li>
-  <li><%= @doll.location %></li>
-  <li><%= @doll.price %></li>
-  <li><%= cl_image_tag @doll.image.key %></li>
-</ul>
+  <div class="cards">
+    <div class="card-trip">
+    <%= cl_image_tag @doll.image.key, class: 'card-image' %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @doll.name %></h2>
+        <p><%= @doll.description %></p>
+        <p><%= @doll.location %></p>
+      </div>
+      <h2 class="card-trip-pricing"><%= @doll.price %>$</h2>
+      <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+    </div>
+    </div>
+  </div>
+</div>

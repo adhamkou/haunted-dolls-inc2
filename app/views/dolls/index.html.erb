@@ -1,18 +1,22 @@
 <div class="container">
   <h1>Here are all the dolls</h1>
 
-  <div class="card-trip">
+  <div class="cards">
     <% @dolls.each do |doll| %>
-      <img src="<%= cl_image_tag doll.image.key %>" />
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= doll.name %></h2>
-          <p><%= doll.description %></p>
-          <p><%= doll.location %></p>
+      <%= link_to doll_path(doll), class: 'text-decoration-none text-dark' do %>
+        <div class="card-trip">
+          <%= cl_image_tag doll.image.key, class: 'card-image' %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= doll.name %></h2>
+              <p><%= doll.description %></p>
+              <p><%= doll.location %></p>
+            </div>
+            <h2 class="card-trip-pricing"><%= doll.price %>$</h2>
+            <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+          </div>
         </div>
-        <h2 class="card-trip-pricing"><%= doll.price %>$</h2>
-        <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
