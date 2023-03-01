@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_01_135401) do
   create_table "bookings", force: :cascade do |t|
     t.date "booking_start_date"
     t.date "booking_end_date"
-    t.string "status"
+    t.string "status", default: "Pending"
     t.bigint "user_id", null: false
     t.bigint "doll_id", null: false
     t.datetime "created_at", null: false
