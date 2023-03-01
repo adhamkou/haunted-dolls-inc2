@@ -1,7 +1,6 @@
 
 <h1>Make a booking </h1>
 <%= simple_form_for([@doll,@booking]) do |f| %>
-  <%= f.association :doll %>
   <%= f.input :booking_start_date %>
   <%= f.input :booking_end_date %>
   <%= f.submit 'Submit', class: 'btn btn-primary' %>
