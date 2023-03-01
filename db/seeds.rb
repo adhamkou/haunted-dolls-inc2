@@ -68,9 +68,9 @@ images.each do |image|
     location: Faker::Movies::Hobbit.location,
     user: owner_one
   )
-  file = URI.open(image)
-  doll.image.attach(io: file, filename: "nes.png", content_type: "image/png")
   doll.save!
+  file = URI.open(image)
+  doll.image.attach(io: file, filename: "nes.png", content_type: "image/jpg")
   p "Doll with id #{doll.id}"
 end
 
