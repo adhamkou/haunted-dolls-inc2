@@ -1,9 +1,10 @@
 <h1>My Bookings</h1>
 <ul>
-<% @bookings.each do |booking| %>
+<% @user_bookings.each do |booking| %>
    <li> booking:<%= booking.id %>
         user: <%= booking.user_id %>
         doll:<%= booking.doll_id %>
+        status:<%= booking.status %>
     </li>
     <% end %>
 </ul>
@@ -14,9 +15,10 @@
     <% @user.dolls.each do |doll| %>
         <li>
             <% doll.bookings.each do |booking| %>
-                booking:<%= booking.id %>
+                booking:<%= link_to booking.id, status_path(booking) %>
                 user:<%= booking.user_id %>
                 doll:<%= booking.doll_id %>
+                status:<%= booking.status  %>
             <% end %>
         </li>
     <% end %>
