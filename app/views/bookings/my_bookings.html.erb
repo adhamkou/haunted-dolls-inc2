@@ -1,18 +1,20 @@
 <h1>My Bookings</h1>
 <ul>
 <% @bookings.each do |booking| %>
-   <li> user: <%= booking.user_id %>
+   <li> booking:<%= booking.id %>
+        user: <%= booking.user_id %>
         doll:<%= booking.doll_id %>
     </li>
     <% end %>
 </ul>
 
 
-<h1>My dolls bookings</h1>
+<h1>My dolls' bookings</h1>
 <ul>
     <% @user.dolls.each do |doll| %>
         <li>
             <% doll.bookings.each do |booking| %>
+                booking:<%= booking.id %>
                 user:<%= booking.user_id %>
                 doll:<%= booking.doll_id %>
             <% end %>
