@@ -50,11 +50,11 @@ images = [
 ]
 
 images2 = [
-  'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677699589/photo-1583334506779-8f63fae3d11d_x0phys.jpg',
   'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677699620/photo-1596215516573-fdeebc0b6070_e9syfa.jpg',
-  'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677699653/photo-1467103789230-f91a5ff8048a_lvn86a.jpg',
-  # 'https://images.unsplash.com/photo-1611787640581-a28e60ebaba6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjB8fGRvbGxzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
-  'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677700302/photo-1512839112604-a05d02098d9e_ywb1xh.jpg',
+  'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677699589/photo-1583334506779-8f63fae3d11d_x0phys.jpg',
+  'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677699562/photo-1551875671-d593541a4b84_psnu8a.jpg',
+  'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677699516/photo-1613626253486-e2d1d9fd9bc9_yma2cs.jpg',
+  'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677699471/photo-1612506001235-f0d0892aa11b_k1coc3.jpg',
   'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677700384/photo-1583656391619-488983c384e6_rpj8lr.jpg',
   'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677700555/photo-1635364796711-7018d19e5e58_ynba0d.jpg',
   'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677700585/photo-1519892338195-90abfe1f6984_qnjumi.jpg',
@@ -75,15 +75,15 @@ images.each do |image|
   p "Doll with id #{doll.id}"
 end
 
-# images2.each do |image|
-#   doll = Doll.new(
-#     name: Faker::Name.female_first_name,
-#     price: Faker::Commerce.price,
-#     description: Faker::Movies::Hobbit.quote,
-#     location: Faker::Movies::Hobbit.location,
-#     user: owner_two
-#   )
-#   file = URI.open(image)
-#   doll.image.attach(io: file, filename: "nes.png", content_type: "image/png")
-#   doll.save!
-# end
+images2.each do |image|
+  doll = Doll.new(
+    name: Faker::Name.female_first_name,
+    price: Faker::Commerce.price,
+    description: Faker::Movies::Hobbit.quote,
+    location: Faker::Movies::Hobbit.location,
+    user: owner_two
+  )
+  file = URI.open(image)
+  doll.image.attach(io: file, filename: "nes.png", content_type: "image/png")
+  doll.save!
+end
