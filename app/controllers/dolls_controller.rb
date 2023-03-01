@@ -25,6 +25,12 @@ class DollsController < ApplicationController
     end
   end
 
+  def destroy
+    @doll = @doll = Doll.find(params[:id])
+    @doll.destroy
+    redirect_to dolls_path
+  end
+
   private
 
   def doll_params

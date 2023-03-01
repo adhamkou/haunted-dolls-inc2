@@ -15,8 +15,9 @@
           <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
         </div>
       </div>
-      <div class='d-flex justify-content-end m-2'>
+      <div class='d-flex justify-content-between m-2'>
         <%= link_to 'Book Me', new_doll_booking_path(@doll), class: 'btn btn-primary btn-sm' %>
+        <%=link_to 'delete', doll_path(@doll), data: { turbo_method: :delete, turbo_confirm: 'Release? Really? ⚠️' }, class: 'btn btn-danger btn-sm'%>
       </div>
     </div>
   </div>
