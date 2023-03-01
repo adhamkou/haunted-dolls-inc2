@@ -4,15 +4,20 @@
   <div class="cards">
     <div class="card-trip">
     <%= cl_image_tag @doll.image.key, class: 'card-image' %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= @doll.name %></h2>
-        <p><%= @doll.description %></p>
-        <p><%= @doll.location %></p>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= @doll.name %></h2>
+          <p><%= @doll.description %></p>
+          <p><%= @doll.location %></p>
+        </div>
+        <div>
+          <h2 class="card-trip-pricing"><%= @doll.price %>$</h2>
+          <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+        </div>
       </div>
-      <h2 class="card-trip-pricing"><%= @doll.price %>$</h2>
-      <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
-    </div>
+      <div class='d-flex justify-content-end m-2'>
+        <%= link_to 'Book Me', new_doll_booking_path(@doll), class: 'btn btn-primary btn-sm' %>
+      </div>
     </div>
   </div>
 </div>
