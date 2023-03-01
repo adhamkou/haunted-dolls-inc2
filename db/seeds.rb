@@ -1,5 +1,6 @@
 require "open-uri"
 
+Booking.destroy_all
 Doll.destroy_all
 User.destroy_all
 
