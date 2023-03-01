@@ -38,9 +38,9 @@ doll3.image.attach(io: file, filename: "nes.png", content_type: "image/png")
 doll3.save!
 
 images = [
-  'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677615112/development/fk5bu0dcok9wv4quu6tufhw1m3ym.webp',
-  'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677617010/development/1qs3fpfro82ifg9dnbutdmqx4z7g.webp',
-  # 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677617544/production/mzecmu665oighpqn8m70br6u4irc.jpg',
+  # 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677615112/development/fk5bu0dcok9wv4quu6tufhw1m3ym.webp',
+  # 'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677617010/development/1qs3fpfro82ifg9dnbutdmqx4z7g.webp',
+  'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677617544/production/mzecmu665oighpqn8m70br6u4irc.jpg',
   'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677624521/production/kzjp1lur6c56x3x81fvfpk6s8ij3.jpg',
   'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677624393/production/8id6z47bhixr9zhtr4kga114n9vi.jpg',
   'https://res.cloudinary.com/dd1e1q8xa/image/upload/v1677624007/production/ysx8esd0wyz977pejj22cxmwi2t8.jpg',
