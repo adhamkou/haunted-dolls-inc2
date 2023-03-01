@@ -1,0 +1,12 @@
+<h1>Confirm Booking</h1>
+renter: <%= @booking.doll.user.first_name %> <%= @booking.doll.user.last_name %>
+<br/>
+
+status: <%= @booking.status %>
+<%= form_with url: set_status_path(@booking) do |form| %>
+  <%= form.radio_button :status, 'Accept' %><strong>Accept<strong/>
+  <%= form.label :status_accept, "(click for accept this booking)" %><br/>
+  <%= form.radio_button :status, 'Decline' %><strong>Decline<strong/>
+  <%= form.label :status_decline, "(click for decline this booking)" %><br/>
+  <%= form.submit "Confirm", class: 'btn btn-primary' %>
+<% end %>

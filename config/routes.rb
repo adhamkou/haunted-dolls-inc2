@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   end
   # resources :bookings, only: [:my_bookings, :set_status]
   get '/my_bookings', to: 'bookings#my_bookings'
-  get 'bookings/:id/set_status', to: 'bookings#set_status'
+  get 'bookings/:id/status', to: 'bookings#status', as: :status
+  post 'bookings/:id/set_status', to: 'bookings#set_status', as: :set_status
 end
