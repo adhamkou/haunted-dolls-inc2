@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     @booking.doll = @doll
     @booking.user = current_user
     if @booking.save
-      redirect_to doll_path(@doll), notice: 'Booking was successfully created.'
+      redirect_to my_bookings_path, notice: 'Booking was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
