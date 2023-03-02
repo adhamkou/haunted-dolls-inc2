@@ -78,6 +78,7 @@
 .card-trip {
   overflow: hidden;
   background: white;
+  border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
@@ -103,6 +104,7 @@
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
@@ -113,4 +115,30 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.drop {
+  background-color: rgb(233, 232, 232);
+  height: 50px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.desciption {
+  width: 100%;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.location {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.name {
+  width: 100%;
 }

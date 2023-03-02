@@ -3,14 +3,18 @@
       <%= link_to doll_path(doll), class: 'text-decoration-none text-dark' do %>
         <div class="card-trip">
           <%= cl_image_tag doll.image.key, class: 'card-image' %>
-          <div class="card-trip-infos">
-            <div>
+          <div class="card-trip-infos d-flex justify-content-start">
+            <div class="name">
               <h2><%= doll.name %></h2>
-              <p><%= doll.description %></p>
-              <p><%= doll.location %></p>
             </div>
-            <h2 class="card-trip-pricing"><%= doll.price %>$</h2>
-            <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+            <div class="desciption mt-2">
+              <p class="drop"><%= doll.description %></p>
+            </div>
+            <div class="location">
+              <p class="bold pt-3"><%= doll.location %></p>
+              <h2 class="card-trip-pricing"><%= doll.price %>$/night</h2>
+              <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+            </div>
           </div>
         </div>
       <% end %>

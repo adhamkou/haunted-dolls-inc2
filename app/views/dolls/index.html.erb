@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container gradient">
   <h1>Here are all the dolls</h1>
   <%= form_with url: dolls_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
@@ -8,5 +8,6 @@
   %>
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
-   <%= render "shared/cards" %>
+ <%= render "shared/cards" %>
 </div>
+
