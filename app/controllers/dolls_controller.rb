@@ -3,6 +3,13 @@ class DollsController < ApplicationController
 
   def index
     @dolls = Doll.all
+    # The `geocoded` scope filters only dolls with coordinates
+    @markers = @dolls.geocoded.map do |doll|
+      {
+        lat: doll.latitude,
+        lng: doll.longitude
+      }
+    end
   end
 
   def show
