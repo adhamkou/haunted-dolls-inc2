@@ -1,25 +1,43 @@
+<div class="container">
+<div>
 <h1>My Bookings</h1>
-<ul>
-<% @user_bookings.each do |booking| %>
-   <li> booking:<%= booking.id %>
-        user: <%= booking.user_id %>
-        doll:<%= booking.doll_id %>
-        status:<%= booking.status %>
-    </li>
+  <% @user_bookings.each do |booking| %>
+    <br/>
+    <div class="card-product">
+        <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
+        <%= cl_image_tag booking.doll.image.key %>
+        <div class="card-product-infos">
+          <h2><strong><%= link_to booking.doll.name, doll_path(booking.doll), class: 'text-dark' %></strong></h2>
+          <p>Price: <%= booking.doll.price %>$</p>
+          <p>From: <%= booking.booking_start_date %>  To: <%= booking.booking_end_date %></p>
+          <p>Status: <%= booking.status %></p>
+        </div>
+    </div>
+    <%# <% end %>
+  <% end %>
+  </div>
+<br/>
+<div>
+  <h1>My dolls' bookings</h1>
+    <% @owner_bookings.each do |booking| %>
+    <%# <%= link_to doll_path(booking.doll), class: 'text-decoration-none text-dark' do%>
+    <br/>
+      <div class="card-product">
+      <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
+          <%= cl_image_tag booking.doll.image.key %>
+      <%# <% end %>
+            <div class="card-product-infos">
+              <h2><strong><%= link_to booking.doll.name, doll_path(booking.doll),class: 'text-black' %></strong></h2>
+              <p>renter: <%= booking.doll.user.first_name %></p>
+              <p>From: <%= booking.booking_start_date %>  To: <%= booking.booking_end_date %></p>
+              <p>status: <%= booking.status %></p>
+            </div>
+        <%= form_with url: set_status_path(booking) do |form|%>
+          <p><%= form.radio_button :status,'Accept'%>Accept</p>
+          <p><%= form.radio_button :status, 'Decline'%>Decline</p>
+          <p><%= form.submit "Confirm", class: 'btn btn-primary'%></p>
+        <% end %>
+      </div>
     <% end %>
-</ul>
-
-
-<h1>My dolls' bookings</h1>
-<ul>
-    <% @user.dolls.each do |doll| %>
-        <li>
-            <% doll.bookings.each do |booking| %>
-                booking:<%= link_to booking.id, status_path(booking) %>
-                user:<%= booking.user_id %>
-                doll:<%= booking.doll_id %>
-                status:<%= booking.status  %>
-            <% end %>
-        </li>
-    <% end %>
-</ul>
+</div>
+</div>
