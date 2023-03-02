@@ -8,6 +8,8 @@ class DollsController < ApplicationController
       {
         lat: doll.latitude,
         lng: doll.longitude
+        info_window_html: render_to_string(partial: "info_window", locals: {doll: doll})
+        marker_html: render_to_string(partial: "marker", locals: {flat: flat}) # Pass the
       }
     end
   end
