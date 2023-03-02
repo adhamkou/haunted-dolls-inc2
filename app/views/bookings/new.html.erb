@@ -1,4 +1,4 @@
-
+<div class="container">
 <h1>Make a booking </h1>
 <%= simple_form_for([@doll,@booking]) do |f| %>
   <%= f.input :booking_start_date %>
@@ -6,3 +6,4 @@
   <%= f.submit 'Submit', class: 'btn btn-primary' %>
 <% end %>
 <%# <%= link_to "Back to booking", list_path(@list) %>
+</div>

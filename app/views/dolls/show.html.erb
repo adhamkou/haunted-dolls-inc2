@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container gradient">
   <h1>Is this the doll you want?</h1>
 
   <div class="cards">
@@ -17,7 +17,11 @@
       </div>
       <div class='d-flex justify-content-between m-2'>
         <%= link_to 'Book Me', new_doll_booking_path(@doll), class: 'btn btn-primary btn-sm' %>
-        <%=link_to 'delete', doll_path(@doll), data: { turbo_method: :delete, turbo_confirm: 'Sure? ⚠️' }, class: 'btn btn-danger btn-sm'%>
+        <%= link_to 'delete', doll_path(@doll), data: { turbo_method: :delete, turbo_confirm: 'Sure? ⚠️' }, class: 'btn btn-danger btn-sm'%>
+
+        <%= link_to edit_doll_path(@doll), class: 'nav-btn' do %>
+            <i class="fa-regular fa-pen-to-square"></i>
+        <% end %>
       </div>
     </div>
   </div>
