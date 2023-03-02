@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Edit your doll posting</h1>
+
+  <%= simple_form_for(@doll) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.input :location %>
+    <%= f.input :image, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>
