@@ -2,13 +2,12 @@ class BookingsController < ApplicationController
   before_action :set_doll, only:[:new, :create]
 
   def my_bookings
-      # display all my booking requests
-      @bookings = Booking.all
-      # raise
-      # display all the booking requests made for my doll
-      @user = current_user
-      # interator : @user.dolls
-      # user.doll.bookings (display all the bookings belong_to this doll,using inside interator)
+    # display all my booking requests
+    @user = current_user
+    @user_bookings = Booking.where('user_id=?', @user.id)
+    # display all the booking requests made for my doll
+    @bookings = Booking.all
+
   end
 
   def new
@@ -26,15 +25,15 @@ class BookingsController < ApplicationController
     end
   end
 
+  def status
+    @booking = Booking.find(params[:id])
+  end
+
   def set_status
     @booking = Booking.find(params[:id])
-    # if @view.booking_status == "accept"
-    #     @booing.status = "accept"
-    # else @view.booking_status == "decline"
-    #     @booking.status = "decline"
-    # end
-    # @booking.update???(params[:booking])??
-    # redirect_to: "...."
+    @booking.status = params[:status]
+    @booking.save
+    redirect_to my_bookings_path
   end
 
   private
