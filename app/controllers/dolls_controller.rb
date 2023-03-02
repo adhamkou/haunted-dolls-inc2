@@ -3,6 +3,7 @@ class DollsController < ApplicationController
 
   def index
     @dolls = Doll.all
+    raise
   end
 
   def show
