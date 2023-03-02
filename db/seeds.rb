@@ -66,7 +66,7 @@ images.each do |image|
     name: Faker::Name.female_first_name,
     price: Faker::Commerce.price,
     description: Faker::Movies::Hobbit.quote,
-    location: Faker::Movies::Hobbit.location,
+    location: Faker::Address.city,
     user: owner_one
   )
   file = URI.open(image)
@@ -80,7 +80,7 @@ images2.each do |image|
     name: Faker::Name.female_first_name,
     price: Faker::Commerce.price,
     description: Faker::Movies::Hobbit.quote,
-    location: Faker::Movies::Hobbit.location,
+    location: Faker::Address.city,
     user: owner_two
   )
   file = URI.open(image)
