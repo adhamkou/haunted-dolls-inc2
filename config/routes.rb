@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get '/', to: 'pages#home', as: :home
-  resources :dolls, only: [:index, :new, :create, :show, :destroy] do
+  resources :dolls, only: [:index, :new, :create, :show, :destroy, :edit, :update] do
     resources :bookings, only: [:new, :create]
   end
   # resources :bookings, only: [:my_bookings, :set_status]

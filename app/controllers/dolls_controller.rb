@@ -2,7 +2,11 @@ class DollsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @dolls = Doll.all
+    if params[:query].present?
+      @dolls = Doll.search_by_name_and_location(params[:query])
+    else
+      @dolls = Doll.all
+    end
   end
 
   def show
@@ -17,6 +21,21 @@ class DollsController < ApplicationController
     @doll = Doll.new(doll_params)
     @user = current_user
     @doll.user = @user
+
+    if @doll.save
+      redirect_to doll_path(@doll)
+    else
+      render :new, status: unprocessable_entity
+    end
+  end
+
+  def edit
+    @doll = Doll.find(params[:id])
+  end
+
+  def update
+    @doll = Doll.find(params[:id])
+    @doll.update(doll_params)
 
     if @doll.save
       redirect_to doll_path(@doll)
