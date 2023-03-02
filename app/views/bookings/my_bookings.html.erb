@@ -39,5 +39,24 @@
         <% end %>
       </div>
     <% end %>
+</ul>
+
+
+<h1>My dolls' bookings</h1>
+<ul>
+    <% @user.dolls.each do |doll| %>
+        <li>
+            <% doll.bookings.each do |booking| %>
+                booking:<%= link_to booking.id, status_path(booking) %>
+                user:<%= booking.user_id %>
+                doll:<%= booking.doll_id %>
+                status:<%= booking.status  %>
+            <% end %>
+        </li>
+    <% end %>
+</ul>
+
+<div style="height:90vh">
+<%# remove the line above once there is content %>
 </div>
 </div>

@@ -2,6 +2,15 @@ class DollsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
+    @dolls = Doll.all
+    # The `geocoded` scope filters only dolls with coordinates
+    @markers = @dolls.geocoded.map do |doll|
+      {
+        lat: doll.latitude,
+        lng: doll.longitude,
+        info_window_html: render_to_string(partial: 'info_window', locals: { doll: doll }),
+        marker_html: render_to_string(partial: 'marker', locals: { doll: doll }) # Pass the
+      }
     if params[:query].present?
       @dolls = Doll.search_by_name_and_location(params[:query])
     else
