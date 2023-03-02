@@ -2,7 +2,11 @@ class DollsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @dolls = Doll.all
+    if params[:query].present?
+      @dolls = Doll.search_by_name_and_location(params[:query])
+    else
+      @dolls = Doll.all
+    end
   end
 
   def show
